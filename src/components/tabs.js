@@ -18,14 +18,16 @@ const Tabs = (topics) => {
   //
   const topicsDiv = document.createElement('div');
   topicsDiv.classList.add('topics');
+
   topics.forEach(t => {
     const tabDiv = document.createElement('div');
     tabDiv.classList.add('tab');
     tabDiv.textContent = t;
-    topicsDiv.appendChild(tabDiv);
+
+    topicsDiv.appendChild(tabDiv)
   })
 
-return topicsDiv
+return topicsDiv;
 }
 
 const tabsAppender = (selector) => {
@@ -39,10 +41,10 @@ const tabsAppender = (selector) => {
   axios.get(`http://localhost:5001/api/topics`)
   .then(resp => {
     console.log(resp)
-     const objects = resp.data.topics
-     console.log(objects)
+     const skills = resp.data.topics
+     
      const entryPoint = document.querySelector(selector);
-     entryPoint.appendChild(Tabs(objects))
+     entryPoint.appendChild(Tabs(skills))
   })
   .catch(error =>{
     console.log(error)
