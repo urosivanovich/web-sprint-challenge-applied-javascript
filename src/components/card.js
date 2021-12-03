@@ -64,9 +64,11 @@ const cardAppender = (selector) => {
   .then(resp =>{
       
       const infoCards = resp.data.articles;
-      console.log(infoCards);
+      
 
     for (let i = 0; i<infoCards.bootstrap.length; i++){
+      console.log(infoCards.bootstrap)
+
       const infoArt = infoCards.bootstrap[i];
       const entryPoint = document.querySelector(selector);
       entryPoint.appendChild(Card(infoArt));
