@@ -23,7 +23,7 @@ const Card = (article) => {
   headlineDiv.classList.add('headline');
   headlineDiv.textContent = `${article.headline}`;
   const authorDiv = document.createElement('div');
-  authorDiv.classList.add()
+  authorDiv.classList.add('author')
 
   
 
